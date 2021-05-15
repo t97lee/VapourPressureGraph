@@ -24,7 +24,6 @@ As of now, the default values of the A, B, and C values are set to 1 to avoid th
 
 '''
 #### Calculations ####
-
 temps_array = [] #array of temperatures in Deg. Celsius
 
 temp_lower = st.number_input("Temperature Lower Bound: ")
@@ -41,7 +40,7 @@ exp_array = [] #array of the pressure values in mmHg for the calculations below
 
 try:
     for temp in range(len(temps_array)):
-        Value = 10**(Coeff_A-(Coeff_B/(temps_array[temp]+Coeff_C))) #might have to scale this down to a few decimals
+        Value = 10**(Coeff_A-(Coeff_B/(temps_array[temp]+Coeff_C))) 
         Rounded_Value = round(Value, 3)
         exp_array.append(Rounded_Value)
 except ValueError:
