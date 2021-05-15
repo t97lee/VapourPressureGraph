@@ -1,5 +1,5 @@
 # Graphing Vapour Pressure as a Function of Temperature 
-Generating graphs of vapour pressure vs. tempearture graphs using Antoine's equation. The app can be viewed here: https://share.streamlit.io/thomaslee01/vapourpressuregraph and was developed using Python for the backend, [Streamlit](https://streamlit.io/) for the front end and [Bokeh](https://bokeh.org/) for the graph generations. There still may be a few bugs that made it past me but so far everything is working okay. 
+Generating graphs of vapour pressure vs. tempearture graphs using Antoine's equation. The app can be viewed [here](https://share.streamlit.io/thomaslee01/vapourpressuregraph) and was developed using Python for the backend, [Streamlit](https://streamlit.io/) for the front end and [Bokeh](https://bokeh.org/) for the graph generations. There still may be a few bugs that made it past me but so far everything is working okay. 
 
 ## Installation
 
