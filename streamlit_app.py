@@ -25,7 +25,7 @@ As of now, the default values of the A, B, and C values are set to 1 to avoid th
 '''
 #### Calculations ####
 
-temps_array = [] #array of temperatures in Deg. Celcius
+temps_array = [] #array of temperatures in Deg. Celsius
 
 temp_lower = st.number_input("Temperature Lower Bound: ")
 temp_upper = st.number_input("Temperature Upper Bound: ")
