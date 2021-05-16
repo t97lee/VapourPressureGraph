@@ -40,7 +40,7 @@ exp_array = [] #array of the pressure values in mmHg for the calculations below
 
 try:
     for temp in range(len(temps_array)):
-        Value = 10**(Coeff_A-(Coeff_B/(temps_array[temp]+Coeff_C))) 
+        Value = 10**(Coeff_A-(Coeff_B/(temps_array[temp]+Coeff_C)))
         Rounded_Value = round(Value, 3)
         exp_array.append(Rounded_Value)
 except ValueError:
@@ -64,7 +64,7 @@ The graph was generated using [Bokeh ver. 2.2.2](https://bokeh.org/) as well as 
 
 Additionally, I currently have a list of things to add to this once I find out how to incorporate them:
 
-* Incorporate a function to generate a table of values which can be easily complete - I am just lazy
+* Incorporate a function to generate a table of values from the graph
 
 * Output graphs for various units of pressure and temperature other than mmHg (e.g. atm, kPa, Pa, °F, K, etc)
 
