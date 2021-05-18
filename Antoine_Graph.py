@@ -12,6 +12,8 @@ import streamlit as st
 from bokeh.plotting import figure, show
 from bokeh.io import curdoc
 import numpy as np
+import pandas as pd
+
 
 '''
 # Plotting Vapour Pressures as a Function of Temperature from Antione's Equation
@@ -59,12 +61,17 @@ p.line(x_axis, y_axis, legend_label="Vapour Pressure", line_width = 2)
 
 st.bokeh_chart(p,use_container_width=False)
 
+#### Generate a Table of Values ####
+if st.button('Generate Table of Values', help="Click to generate a table of values"):
+    st.write(pd.DataFrame({
+        'Temperature (ºC)': x_axis,
+        'Vapour Pressure (mmHg)': y_axis
+    }))
+
 """
 The graph was generated using [Bokeh ver. 2.2.2](https://bokeh.org/) as well as [Python 3.8.5](https://www.python.org/downloads/release/python)
 
 Additionally, I currently have a list of things to add to this once I find out how to incorporate them:
-
-* Incorporate a function to generate a table of values from the graph
 
 * Output graphs for various units of pressure and temperature other than mmHg (e.g. atm, kPa, Pa, °F, K, etc)
 
