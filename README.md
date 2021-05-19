@@ -24,7 +24,7 @@ streamlit run Antoine_Graph.py
 Unfortunately I do not own a MacOS based device and do not know how to run this on MacOS. 
 
 ## Example 
-Below is an example of how to use the app itself when viewed via [here](https://share.streamlit.io/thomaslee01/vapourpressuregraph) or through a
+Below is an example of how to use the app itself when viewed via [here](https://share.streamlit.io/thomaslee01/vapourpressuregraph/Antoine_Graph.py) or through a
 local server through localhost.
 
 https://user-images.githubusercontent.com/51377707/118380520-529fad80-b5b0-11eb-99b0-29658ff9962f.mp4
