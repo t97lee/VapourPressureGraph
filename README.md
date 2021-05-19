@@ -1,6 +1,6 @@
 # Graphing Vapour Pressure as a Function of Temperature 
 
-##### Update: May 18, 2021: I have added a feature that generates a table of values from the graph (outputs temperature in degrees °C and pressure in mmHg). Bugs may still occur
+##### Update May 18, 2021: I have added a feature that generates a table of values from the graph (outputs temperature in degrees °C and pressure in mmHg). Bugs may still occur
 
 Generating graphs of vapour pressure vs. tempearture graphs using Antoine's equation. The app can be viewed [here](https://share.streamlit.io/thomaslee01/vapourpressuregraph) and was developed using Python for the backend, [Streamlit](https://streamlit.io/) for the front end and [Bokeh](https://bokeh.org/) for the graph generations. There still may be a few bugs that made it past me but so far everything is working okay. 
 
@@ -19,7 +19,7 @@ pip install -r /path/to/requirements.txt
 Ensure that you have dependencies installed from requirements.txt above and from the directory of streamlit_app.py, open cmd.exe and enter the following:
 
 ```bash
-streamlit run streamlit_app.py
+streamlit run Antoine_Graph.py
 ```
 Unfortunately I do not own a MacOS based device and do not know how to run this on MacOS. 
 
