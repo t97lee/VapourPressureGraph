@@ -22,9 +22,14 @@ This is a tool that graphs vapour pressure (mmHg) versus temperature (°C) based
 
 Below you will enter the A, B, and C coefficients, as well as the temperature range for the equation to generate the graph.
 
-As of now, the default values of the A, B, and C values are set to 1 to avoid the error of division by zero.
-
 '''
+st.info("As of now, the default values of the A, B, and C values are set to 1 to avoid the error of division by zero.")
+
+ex = RuntimeWarning("This error is showing due to out of range values most likely caused by the lack of an appropriate C value but if the graph is present, you should be okay. "
+"I am currently trying to find a fix for this.")
+
+st.exception(ex) #raise an exception for a RuntimeWarning 
+
 #### Calculations ####
 temps_array = [] #array of temperatures in Deg. Celsius
 
@@ -68,7 +73,8 @@ if st.button('Generate Table of Values', help="Click to generate a table of valu
         'Vapour Pressure (mmHg)': y_axis
     }))
 
-"""
+
+'''
 The graph was generated using [Bokeh ver. 2.2.2](https://bokeh.org/) as well as [Python 3.8.5](https://www.python.org/downloads/release/python)
 
 Additionally, I currently have a list of things to add to this once I find out how to incorporate them:
@@ -77,7 +83,7 @@ Additionally, I currently have a list of things to add to this once I find out h
 
 Thank you for viewing! :grinning:
 
-"""
+'''
 
 #### Footer ####
 
