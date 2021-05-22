@@ -14,7 +14,6 @@ from bokeh.io import curdoc
 import numpy as np
 import pandas as pd
 
-
 '''
 # Plotting Vapour Pressures as a Function of Temperature from Antione's Equation
 
