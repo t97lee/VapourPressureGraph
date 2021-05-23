@@ -6,6 +6,14 @@ Generating graphs of vapour pressure vs. tempearture graphs using Antoine's equa
 
 ## Installation
 
+Clone the repository using:
+
+```bash
+git clone https://github.com/thomaslee01/VapourPressureGraph
+```
+
+and then cd to the directory. 
+
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements.txt.
 
 ```bash
