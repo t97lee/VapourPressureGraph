@@ -1,5 +1,5 @@
 numpy==1.20.3
+htbuilder==0.3.0
 pandas==1.2.4
 streamlit==0.82.0
 bokeh==2.2.2
-htbuilder==0.3.0

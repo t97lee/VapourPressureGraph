@@ -1,18 +1,21 @@
 '''
-Generating vapour pressures given Antoine Coefficients
+Generating vapour pressure graphs given Antoine Coefficients
 
 Want the following:
 
 --> Program to ask for coefficients, A,B,C
 --> Program to ask for the temperature in degree celcius
---> Compute the vapour pressure (in mmHg)
+--> Compute the vapour pressure (in mmHg, soon to be other pressures/temperatures)
 
 '''
 import streamlit as st
-from bokeh.plotting import figure, show
-from bokeh.io import curdoc
+from bokeh.plotting import figure, show 
+#from bokeh.io import curdoc --> used to configure the theme of the Bokeh graph but appears to not be working. 
 import numpy as np
 import pandas as pd
+
+import base64
+import io
 
 '''
 # Plotting Vapour Pressures as a Function of Temperature from Antione's Equation
@@ -24,18 +27,13 @@ Below you will enter the A, B, and C coefficients, as well as the temperature ra
 '''
 st.info("As of now, the default values of the A, B, and C values are set to 1 to avoid the error of division by zero.")
 
-ex = RuntimeWarning("This error is showing due to out of range values most likely caused by the lack of an appropriate C value but if the graph is present, you should be okay. "
-"I am currently trying to find a fix for this.")
-
-st.exception(ex) #raise an exception for a RuntimeWarning 
-
 #### Calculations ####
 temps_array = [] #array of temperatures in Deg. Celsius
 
 temp_lower = st.number_input("Temperature Lower Bound: ")
 temp_upper = st.number_input("Temperature Upper Bound: ")
 
-for temp in np.arange(temp_lower,temp_upper+1): #adds the temperature between each element
+for temp in np.arange(temp_lower,temp_upper+1): #populates array with temperatures between the tao values given.
     temps_array.append(temp)
 
 Coeff_A = st.number_input("A Value: ", value=1e0, step=1e-5, format="%.5f")
@@ -44,13 +42,10 @@ Coeff_C = st.number_input("C Value: ", value=1e0, step=1e-5, format="%.3f")
 
 exp_array = [] #array of the pressure values in mmHg for the calculations below
 
-try:
-    for temp in range(len(temps_array)):
-        Value = 10**(Coeff_A-(Coeff_B/(temps_array[temp]+Coeff_C)))
-        Rounded_Value = round(Value, 3)
-        exp_array.append(Rounded_Value)
-except ValueError:
-    st.markdown("You may not divide by zero")
+for temp in range(len(temps_array)):
+    Value = 10**(Coeff_A-(Coeff_B/(temps_array[temp]+Coeff_C)))
+    Rounded_Value = round(Value, 4) #rounds values to 4 decimal places 
+    exp_array.append(Rounded_Value)
 
 #### Bokeh configuration ####
 
@@ -63,25 +58,34 @@ p = figure(title="Vapour Pressure vs Temperature",
 
 p.line(x_axis, y_axis, legend_label="Vapour Pressure", line_width = 2)
 
-st.bokeh_chart(p,use_container_width=False)
+#### Error Handling ####
+try:
+    st.bokeh_chart(p,use_container_width=False) #Generates graph for viewing
+except ValueError:
+    st.error("Your values are out of range for Bokeh to display a graph, try to input smaller values (in particular for your C value) or make a pull request/issue on Github. Thank you!")
 
 #### Generate a Table of Values ####
-if st.button('Generate Table of Values', help="Click to generate a table of values"):
-    st.write(pd.DataFrame({
+
+pd_df = pd.DataFrame({
         'Temperature (ºC)': x_axis,
         'Vapour Pressure (mmHg)': y_axis
-    }))
+    })
+
+if st.button('Generate Table of Values', help="Click to generate a table of values"):
+    st.write(pd_df)
+
+towrite = io.BytesIO()
+downloaded_file = pd_df.to_excel(towrite, encoding='utf-8', index=False, header=True)
+towrite.seek(0)  # reset pointer
+b64 = base64.b64encode(towrite.read()).decode() 
+linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="Vapour_Pressure_Data.xlsx">Download Excel (.xlsx) File</a>'
+st.markdown(linko, unsafe_allow_html=True)
 
 
 '''
-The graph was generated using [Bokeh ver. 2.2.2](https://bokeh.org/) as well as [Python 3.8.5](https://www.python.org/downloads/release/python)
-
-Additionally, I currently have a list of things to add to this once I find out how to incorporate them:
-
-* Output graphs for various units of pressure and temperature other than mmHg (e.g. atm, kPa, Pa, °F, K, etc)
+The graph was generated using [Bokeh ver. 2.2.2](https://bokeh.org/) as well as [Python 3.8.5.](https://www.python.org/downloads/release/python)
 
 Thank you for viewing! :grinning:
-
 '''
 
 #### Footer ####
