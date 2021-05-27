@@ -1,5 +1,7 @@
 # Graphing Vapour Pressure as a Function of Temperature 
 
+##### Update May 27, 2021: Added a feature to select different pressure units added (bar, kPa, atm, mmHg). Will incorporate an option to select different temperature units in the near future. 
+
 ##### Update May 24, 2021: A feature that allows users to download an .xlsx spreadsheet from the table of values has been added. 
 
 ##### Update May 19, 2021: I have added a feature that generates a table of values from the graph (outputs temperature in degrees °C and pressure in mmHg). Bugs may still occur. If you get an error after inputting values up until C, it most likely will resolve itself once a C value is inputted.
@@ -47,7 +49,6 @@ https://user-images.githubusercontent.com/51377707/119398586-c5421480-bca5-11eb-
 
 The example above showcased the values of Acetaldehyde and were retrieved from Table B.4 of [Elementary Principals of Chemical Processes 4th Ed. by Richard M. Felder.](https://www.wiley.com/en-ca/Elementary+Principles+of+Chemical+Processes%2C+4th+Edition-p-9781119192107)
 
-### Features to be Added (subject to change):
+### Things to update:
 
-- Variety of units for temperature and pressure
-- Ability to change the visuals of the graph
+- Refactoring code into classes and to be more read-able. 
