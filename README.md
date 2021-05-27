@@ -51,4 +51,4 @@ The example above showcased the values of Acetaldehyde and were retrieved from T
 
 ### Things to update:
 
-- Refactoring code into classes and to be more read-able. 
+- Refactoring code into classes and to be more readable. 
