@@ -1,6 +1,6 @@
 # Graphing Vapour Pressure as a Function of Temperature 
 
-##### Update May 27, 2021: Added a feature to select different pressure units added (bar, kPa, atm, mmHg). Will incorporate an option to select different temperature units in the near future. 
+##### Update May 27, 2021: Added a feature to select different pressure units added (bar, kPa, atm, mmHg). Will incorporate an option to select different temperature units in the near future. I am also refactoring the source code to include classes and such to clean up the messy code. 
 
 ##### Update May 24, 2021: A feature that allows users to download an .xlsx spreadsheet from the table of values has been added. 
 
