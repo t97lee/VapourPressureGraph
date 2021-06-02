@@ -1,5 +1,7 @@
 # Graphing Vapour Pressure as a Function of Temperature 
 
+##### Update June 2, 2021: Added feature to change temperature units for the graph. Apologies for the spaghetti code - I'll revisit and refactor when I get the chance to. 
+
 ##### Update May 27, 2021: Added a feature to select different pressure units added (bar, kPa, atm, mmHg). Will incorporate an option to select different temperature units in the near future. I am also refactoring the source code to include classes and such to clean up the messy code. 
 
 ##### Update May 24, 2021: A feature that allows users to download an .xlsx spreadsheet from the table of values has been added. 
@@ -52,3 +54,4 @@ The example above showcased the values of Acetaldehyde and were retrieved from T
 ### Things to update:
 
 - Refactoring code into classes and to be more readable. 
+- Layout changes, move the graph to the right of the web app instead of having it hanging at the bottom. 
