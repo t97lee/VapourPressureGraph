@@ -1,14 +1,13 @@
 # Graphing Vapour Pressure as a Function of Temperature 
 
-##### Update June 2, 2021: Added feature to change temperature units for the graph. Apologies for the spaghetti code - I'll revisit and refactor when I get the chance to. 
-
-##### Update May 27, 2021: Added a feature to select different pressure units added (bar, kPa, atm, mmHg). Will incorporate an option to select different temperature units in the near future. I am also refactoring the source code to include classes and such to clean up the messy code. 
-
-##### Update May 24, 2021: A feature that allows users to download an .xlsx spreadsheet from the table of values has been added. 
-
-##### Update May 19, 2021: I have added a feature that generates a table of values from the graph (outputs temperature in degrees °C and pressure in mmHg). Bugs may still occur. If you get an error after inputting values up until C, it most likely will resolve itself once a C value is inputted.
-
-Generating graphs of vapour pressure vs. tempearture graphs using Antoine's equation. The app can be viewed [here](https://share.streamlit.io/thomaslee01/vapourpressuregraph/Antoine_Graph.py) and was developed using Python for the backend, [Streamlit](https://streamlit.io/) for the front end and [Bokeh](https://bokeh.org/) for the graph generations. There still may be a few bugs that made it past me but so far everything is working okay. 
+|Date   |Update   |
+|----|---|
+|<img width=200/>June 2   |Added feature to change temperature units for the graph. Apologies for the spaghetti code - I'll revisit and refactor when I get the chance to. |
+|May 27   |Added a feature to select different pressure units added (bar, kPa, atm, mmHg). Will incorporate an option to select different temperature units in the near future. I am also refactoring the source code to include classes and such to clean up the messy code. |
+|May 24   |A feature that allows users to download an .xlsx spreadsheet from the table of values has been added. |
+|May 19   |I have added a feature that generates a table of values from the graph (outputs temperature in degrees °C and pressure in mmHg). Bugs may still occur. If you                    get an error after inputting values up until C, it most likely will resolve itself once a C value is inputted. |
+ 
+### Generating graphs of vapour pressure vs. tempearture graphs using Antoine's equation. The app can be viewed [here](https://share.streamlit.io/thomaslee01/vapourpressuregraph/Antoine_Graph.py) and was developed using Python for the backend, [Streamlit](https://streamlit.io/) for the front end and [Bokeh](https://bokeh.org/) for the graph generations.
 
 ## Installation
 
