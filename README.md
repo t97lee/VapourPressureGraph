@@ -34,7 +34,7 @@ Ensure that you have dependencies installed from requirements.txt above and from
 streamlit run Antoine_Graph.py
 ```
 
-## Example 
+## Example (outdated, will update soon)
 Below is an example of how to use the app itself when viewed [here](https://share.streamlit.io/thomaslee01/vapourpressuregraph/Antoine_Graph.py) or through a
 local server through localhost.
 
