@@ -1,3 +1,6 @@
+
+
+
 # Graphing Vapour Pressure as a Function of Temperature 
 
 |Date   |Update   |
@@ -38,7 +41,7 @@ Below is an example of how to use the app itself when viewed [here](https://shar
 local server through localhost.
 
 
-https://user-images.githubusercontent.com/51377707/119398586-c5421480-bca5-11eb-8f50-7dc1f6db9bb6.mp4
+https://user-images.githubusercontent.com/51377707/121049688-f0d4fc80-c785-11eb-8bc9-bef9d2cd8a86.mp4
 
 
 ### Image of the Downloaded Plot:
