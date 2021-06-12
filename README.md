@@ -55,5 +55,6 @@ The example above showcased the values of Acetaldehyde and were retrieved from T
 
 ### Things to update:
 
-- Refactoring code into classes and to be more readable. 
+- Refactoring code into classes and to be more readable rather than have everything hard coded for the options which makes it hard to update. 
 - Layout changes, move the graph to the right of the web app instead of having it hanging at the bottom. 
+- Update graph line legend (blue line) to reflect the pressure units seleteced. 
