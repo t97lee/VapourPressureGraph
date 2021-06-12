@@ -52,9 +52,7 @@ options_temperature = st.radio(
     'Temperature Units:',
     ('°C','K','°F'))
 
-temps_array = [] #array of temperatures in deg. celsius
-for temp in np.arange(temp_lower,temp_upper+1): #populates array with temperatures between the two values given.
-    temps_array.append(temp)
+temps_array = [temp_a for temp_a in np.arange(temp_lower, temp_upper +1)] #array of temperatures in deg. celsius
 
 #### Calculations ####
 
@@ -62,7 +60,9 @@ mmhg_array = [] #initialize empty list
 for temp in range(len(temps_array)): 
     Value = 10**(Coeff_A-(Coeff_B/(temps_array[temp]+Coeff_C))) #Computes the vapour pressure in mmHg and °C
     rounded_mmhg = round(Value, 4) #rounds values to 4 decimal places 
-    mmhg_array.append(rounded_mmhg) 
+    mmhg_array.append(rounded_mmhg)
+
+mmhg_array = [temp for temp in range(len(temps_array))]
 
 #### unit conversions and classes ####
 
@@ -167,7 +167,7 @@ def mmhg_kelvin():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_mmhg_k.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)   
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_mmHg.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
@@ -200,7 +200,7 @@ def mmhg_f():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_mmhg_f.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_mmHg.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
@@ -233,7 +233,7 @@ def atm_c():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_atm_c.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_atm.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
@@ -267,7 +267,7 @@ def atm_k():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_atm_k.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_atm.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
@@ -301,7 +301,7 @@ def atm_f():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_atm_f.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_atm.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
@@ -337,7 +337,7 @@ def bar_c():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_bar_c.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_bar.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
@@ -372,7 +372,7 @@ def bar_k():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_bar_k.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_bar.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
@@ -407,7 +407,7 @@ def bar_f():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_bar_f.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_bar.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
@@ -441,7 +441,7 @@ def kpa_c():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_kpa_c.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_kpa.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
@@ -475,7 +475,7 @@ def kpa_k():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_kpa_k.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_kpa.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
@@ -509,7 +509,7 @@ def kpa_f():
 
     towrite = io.BytesIO()
     downloaded_file = pd_df_kpa_f.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)  # reset pointer
+    towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode() 
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="PVap_kpa.xlsx">Download Excel (.xlsx) File</a>'
     st.markdown(linko, unsafe_allow_html=True)
