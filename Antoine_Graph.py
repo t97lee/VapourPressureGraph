@@ -8,13 +8,14 @@ Want the following:
 --> Compute the vapour pressure (in mmHg, soon to be other pressures/temperatures)
 
 '''
-import streamlit as st
-from bokeh.plotting import figure, show 
-import numpy as np
-import pandas as pd
-import openpyxl
 import base64
 import io
+import openpyxl
+from bokeh.plotting import figure 
+import streamlit as st
+import numpy as np
+import pandas as pd
+
 
 st.set_page_config(
     page_title = "Vapour Pressure Graph Generator",
@@ -66,7 +67,7 @@ mmhg_array = [temp for temp in range(len(temps_array))]
 
 #### unit conversions and classes ####
 
-class pressures:
+class Pressures:
     def __init__ (self, pressure_input):
         self.pressure = pressure_input
     
@@ -85,9 +86,9 @@ class pressures:
         kpa_array = [(pressure * (101.325/760)) for pressure in self.pressure]
         return kpa_array
 
-pressure = pressures(mmhg_array)
+pressure = Pressures(mmhg_array)
 
-class temperature:
+class Temperature:
     def __init__ (self, temp_input):
         self.temp_input = temp_input
     
@@ -102,7 +103,7 @@ class temperature:
         fahrenheit = [((temps*9/5) + 32) for temps in self.temp_input]
         return fahrenheit
 
-temps = temperature(temps_array)
+temps = Temperature(temps_array)
 
 #### Functions for determining the graphs ####
 
