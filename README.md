@@ -54,7 +54,7 @@ https://user-images.githubusercontent.com/51377707/121049688-f0d4fc80-c785-11eb-
 The example above showcased the values of Acetaldehyde and were retrieved from Table B.4 of [Elementary Principals of Chemical Processes 4th Ed. by Richard M. Felder.](https://www.wiley.com/en-ca/Elementary+Principles+of+Chemical+Processes%2C+4th+Edition-p-9781119192107)
 
 ### Things to update:
-
-- Refactoring code into classes and to be more readable rather than have everything hard coded for the options which makes it hard to update. 
+- Include docstrings for classes and functions 
+- Refactoring code, the functions are very very ugly to edit and look at. 
 - Layout changes, move the graph to the right of the web app instead of having it hanging at the bottom. 
 - Update graph line legend (blue line) to reflect the pressure units seleteced. 
