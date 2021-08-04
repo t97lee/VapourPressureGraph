@@ -1,6 +1,3 @@
-
-
-
 # Graphing Vapour Pressure as a Function of Temperature 
 
 |Date   |Update   |
@@ -58,3 +55,4 @@ The example above showcased the values of Acetaldehyde and were retrieved from T
 - Refactoring code, the functions are very very ugly to edit and look at. 
 - Layout changes, move the graph to the right of the web app instead of having it hanging at the bottom. 
 - Update graph line legend (blue line) to reflect the pressure units seleteced. 
+- Change file type to .csv
